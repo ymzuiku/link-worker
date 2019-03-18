@@ -1,0 +1,56 @@
+{
+  "name": "link-worker",
+  "version": "0.0.1",
+  "main": "index.js",
+  "repository": "git@github.com:ymzuiku/link-worker.git",
+  "author": "pillar",
+  "bin": {
+    "link-worker": "bin/index.js"
+  },
+  "license": "MIT",
+  "scripts": {
+    "lint-ci": "lint-staged"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint-ci",
+      "pre-push": "yarn lint-ci"
+    }
+  },
+  "lint-staged": {
+    "bin/**/*.js": [
+      "prettier-eslint --write",
+      "git add",
+      "eslint"
+    ]
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.12.1",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^4.0.0",
+    "eslint-config-react-app": "^3.0.6",
+    "eslint-loader": "2.1.1",
+    "eslint-plugin-flowtype": "2.50.1",
+    "eslint-plugin-import": "2.14.0",
+    "eslint-plugin-jsx-a11y": "6.1.2",
+    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-react": "7.11.1",
+    "husky": "^1.3.1",
+    "lint-staged": "^8.1.5",
+    "nodemon": "^1.18.9",
+    "prettier": "^1.16.3",
+    "prettier-eslint-cli": "^4.7.1"
+  },
+  "prettier": {
+    "useTabs": false,
+    "printWidth": 120,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "all",
+    "bracketSpacing": true,
+    "jsxBracketSameLine": false,
+    "arrowParens": "avoid",
+    "proseWrap": "preserve"
+  }
+}
